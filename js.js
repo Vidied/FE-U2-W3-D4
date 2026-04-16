@@ -87,3 +87,16 @@ const nascondi = () => {
     };
   });
 };
+
+const inputRicerca = document.getElementById("inputRicerca");
+const btnRicerca = document.getElementById("btnRicerca");
+
+const ricerca = (e) => {
+  e.preventDefault();
+  const valoreRicerca = inputRicerca.value;
+  if (valoreRicerca !== "") {
+    caricaImg(valoreRicerca);
+  }
+};
+
+btnRicerca.addEventListener("click", ricerca);
