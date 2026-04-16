@@ -1,9 +1,9 @@
 const apiHamsters = "https://api.pexels.com/v1/search?query=hamsters";
 const key = "BHcPyzIycHPf3X3vPfe241uV67ifUs6ZmbLdG2JrfmdIfJXwt8gpxNQb";
-const rowContainer = document.querySelectorAll(".album .row");
+const rowContainer = document.querySelector(".album .row");
 
 const caricaImg = (query) => {
-  fetch("https://api.pexels.com/v1/search?query=hamsters", {
+  fetch(`https://api.pexels.com/v1/search?query=${query}`, {
     headers: {
       Authorization: key,
     },
@@ -17,6 +17,7 @@ const caricaImg = (query) => {
     })
     .then((data) => {
       console.log(data);
+      scambioImg(data.photos);
     })
     .catch((err) => console.error("Errore nel caricamento:", err));
 };
@@ -24,11 +25,13 @@ const caricaImg = (query) => {
 const scambioImg = (immagini) => {
   ((rowContainer.innerHTML = ""),
     immagini.forEach((immagine) => {
-      rowContainer.innerHTML += `            <div class="col-md-4">
+      rowContainer.innerHTML += `            
+            <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
                 <img
                   src="${immagine.src.large}"
                   class="bd-placeholder-img card-img-top imgCard"
+                 style="height: 150px; widht: 200px; object-fit: cover;"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -62,8 +65,8 @@ const scambioImg = (immagini) => {
     }));
 };
 
-const loadBtn = document.querySelector("btn-primary");
-const secondaryBtn = document.querySelector("btn-secondary");
+const loadBtn = document.querySelector(".btn-primary");
+const secondaryBtn = document.querySelector(".btn-secondary");
 
 loadBtn.addEventListener("click", (e) => {
   e.preventDefault();
