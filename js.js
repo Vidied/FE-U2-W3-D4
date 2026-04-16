@@ -31,10 +31,11 @@ const scambioImg = (immagini) => {
                 <img
                   src="${immagine.src.medium}"
                   class="bd-placeholder-img card-img-top imgCard"
-                 style="height: 150px; widht: 200px; object-fit: cover;"
+                 style="min-height: 150px; min-widht: 200px; object-fit: cover;max-height: 300px; max-widht 400px;
+                 widht: 30vw; height: 30vh"
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Lorem Ipsum</h5>
+                  <h5 class="card-title">${immagine.photographer}</h5>
                   <p class="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
