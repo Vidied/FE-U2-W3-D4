@@ -29,7 +29,7 @@ const scambioImg = (immagini) => {
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
                 <img
-                  src="${immagine.src.large}"
+                  src="${immagine.src.medium}"
                   class="bd-placeholder-img card-img-top imgCard"
                  style="height: 150px; widht: 200px; object-fit: cover;"
                 />
@@ -57,7 +57,7 @@ const scambioImg = (immagini) => {
                         Hide
                       </button>
                     </div>
-                    <small class="text-muted">9 mins</small>
+                    <small class="text-muted">${immagine.id}</small>
                   </div>
                 </div>
               </div>
