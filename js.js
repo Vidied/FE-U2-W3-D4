@@ -84,7 +84,7 @@ const nascondi = () => {
   const hideBtn = document.querySelectorAll(".btn-hide");
   hideBtn.forEach((btn) => {
     btn.onclick = (e) => {
-      e.target.closest(".col-md-4").remove();
+      e.target.closest(".card").remove();
     };
   });
 };
