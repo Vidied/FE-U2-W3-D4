@@ -29,7 +29,7 @@ const scambioImg = (immagini) => {
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
                 <img
-                  src="${immagine.src.medium}"
+                  src="${immagine.src.large}"
                   class="bd-placeholder-img card-img-top imgCard"
                  style="min-height: 150px; min-widht: 200px; object-fit: cover;max-height: 300px; max-widht 400px;
                  widht: 30vw; height: 30vh"
