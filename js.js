@@ -52,9 +52,9 @@ const scambioImg = (immagini) => {
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-sm btn-outline-secondary btn-hide"
                       >
-                        Edit
+                        Hide
                       </button>
                     </div>
                     <small class="text-muted">9 mins</small>
@@ -63,6 +63,7 @@ const scambioImg = (immagini) => {
               </div>
             </div>`;
     }));
+  nascondi();
 };
 
 const loadBtn = document.querySelector(".btn-primary");
@@ -77,3 +78,12 @@ secondaryBtn.addEventListener("click", (e) => {
   e.preventDefault();
   caricaImg("tigers");
 });
+
+const nascondi = () => {
+  const hideBtn = document.querySelectorAll(".btn-hide");
+  hideBtn.forEach((btn) => {
+    btn.onclick = (e) => {
+      e.target.closest(".col-md-4").remove();
+    };
+  });
+};
